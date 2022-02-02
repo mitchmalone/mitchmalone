@@ -11,10 +11,10 @@ Product & tech leader (ex-CTO, Product Lead @linktr.ee). Flâneur, modern day re
 - **📫 How to reach me:** [My Linktree](https://linktr.ee/mitchmalone)
 - **😄 Pronouns:** he/him/his
 
-# I'm working on
+# Work Status
 
 ✨✨✨ Open for opportunites - [Contact Me](https://linktr.ee/mitchmalone) ✨✨✨
 
-CTPO @ [Ampjar](https://ampjar.com/)
-CTPO @ [Appreci](https://appreci.io/)
-Consultant with Tangara Blue Foundation
+- CTPO @ [Ampjar](https://ampjar.com/)
+- CTPO @ [Appreci](https://appreci.io/)
+- Consultant with Tangara Blue Foundation
