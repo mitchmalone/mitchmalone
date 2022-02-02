@@ -1,5 +1,7 @@
 # Hi, I'm Mitch 👋
 
+Product & tech leader (ex-CTO, Product Lead @linktr.ee). Flâneur, modern day renaissance man, maker, photographer, climber, traveler, outdoors type.
+
 # Now
 
 - **📍 Location:** Digital nomad, [currently traveling Australia in a sprinter van](https://www.itinerantadventure.com/).
@@ -11,9 +13,8 @@
 
 # I'm working on
 
-|||image goes her|||
+✨✨✨ Open for opportunites - [Contact Me](https://linktr.ee/mitchmalone) ✨✨✨
 
-
-# I'm working on
-
-|||image goes her|||
+CTPO @ [Ampjar](https://ampjar.com/)
+CTPO @ [Appreci](https://appreci.io/)
+Consultant with Tangara Blue Foundation
