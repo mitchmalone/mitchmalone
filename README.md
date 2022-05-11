@@ -10,6 +10,5 @@ Product & tech leader (ex-**CTO** and **Head of Product** at [Linktree](https://
 - **😄 Pronouns:** he/him/his
 
 # Work Status
-- CTPO at [Appreci](https://appreci.io/)
-- Freelance Consultant at Tangara Blue Foundation
+- Freelance CTO and CPO, currently working with several concurrent clients
 - Open for opportunites - [Contact Me](https://linktr.ee/mitchmalone)
