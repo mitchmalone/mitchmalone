@@ -12,5 +12,4 @@ Product & tech leader, digital nomad, flâneur, modern day renaissance man, code
 
 # Work Status
 - Head of Product at [AuditCover](https://www.auditcover.com)
-- Freelance CTO and CPO, currently working with several concurrent clients
-- Open for opportunites - [Contact Me](https://linktr.ee/mitchmalone)
+- Happy, but always open to chat - [Contact Me](https://linktr.ee/mitchmalone)
