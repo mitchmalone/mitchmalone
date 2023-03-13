@@ -2,7 +2,7 @@
 Product & tech leader, digital nomad, flâneur, modern day renaissance man, coder, hacker, maker, photographer, climber, traveler, outdoors type. Currently open to full time product and technology leadership roles. 
 
 # Now
-**📍 Location:** Digital nomad, [currently traveling Australia in a sprinter van](https://www.itinerantadventure.com/).
+**📍 Location:** Digital nomad. [Where am I Now](https://nomadmo.re/map/now/)?
 
 **🔭 Work (by day):** Head of Product at [AuditCover](https://www.auditcover.com)
 
