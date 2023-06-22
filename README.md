@@ -4,9 +4,9 @@ Product & tech leader, digital nomad, flâneur, modern day renaissance man, code
 # Now
 **📍 Location:** Digital nomad. [Where am I Now](https://nomadmo.re/map/now/)?
 
-**🔭 Work (by day):** Head of Product at [AuditCover](https://www.auditcover.com)
+**🔭 Work:** [Currently available](https://mitchmalone.io).
 
-**📹 Work (by night):** Content creator, aspiring YouTuber, constant learner.
+**📹 Other:** Photographer, content creator, aspiring YouTuber, constant learner.
 
 **🌱 Currently learning:** Always learning with a huge reading list on product and design.
 
