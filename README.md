@@ -18,4 +18,3 @@ Product & tech leader, digital nomad, flâneur, modern day renaissance man, code
 
 # Work Status
 - [Open to new roles](https://mitchmalone.io).
-- Happy, but always open to chat - [Contact Me](https://linktr.ee/mitchmalone)
