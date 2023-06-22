@@ -17,4 +17,4 @@ Product & tech leader, digital nomad, flâneur, modern day renaissance man, code
 **😄 Pronouns:** he/him/his
 
 # Work Status
-- [Open to new roles](https://mitchmalone.io).
+- [Open to new roles](https://mitchmalone.io)
