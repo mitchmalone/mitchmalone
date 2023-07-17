@@ -1,20 +1,20 @@
 # Hi, I'm Mitch 👋
-Product & tech leader, digital nomad, flâneur, modern day renaissance man, coder, hacker, maker, photographer, climber, traveler, outdoors type. Currently open to full time product and technology leadership roles. 
+**😄 Pronouns:** he/him/his.<br />
+**👋 About:** Software engineer for 20+ years turned post-technical product and engineering lead.
 
 # Now
-**📍 Location:** Digital nomad. [Where am I Now](https://nomadmo.re/map/now/)?
-
-**🔭 Work:** [Currently available](https://mitchmalone.io).
-
-**📹 Other:** Photographer, content creator, aspiring YouTuber, constant learner.
-
-**🌱 Currently learning:** Always learning with a huge reading list on product and design.
-
-**💬 Ask me about:** Tech and product leadrship, post-technical value for engineering managers, van life, travel, digital nomadism.
-
+**📍 Location:** Digital nomad. [Where am I Now](https://nomadmo.re/map/now/)?<br />
+**🎒 Work:** [Currently available](https://mitchmalone.io) for freelance and contract roles.<br />
+**📹 Other:** [Photographer](https://mitchmalone.photography), [content creator](https://nomadmo.re), constant learner.<br />
+**🌱 Currently learning:** Always learning with a huge reading list on product and design.<br />
+**💬 Ask me about:** Tech and product leadership, post-technical value for engineering managers, van life, travel, and digital nomadism.<br />
 **📫 How to reach me:** [My Linktree](https://linktr.ee/mitchmalone)
 
-**😄 Pronouns:** he/him/his
-
-# Work Status
-- [Open to new roles](https://mitchmalone.io)
+# Links
+🔗 [My Linktree](https://linktr.ee/mitchmalone)<br/>
+📸 [Instagram](https://www.instagram.com/mitchmalone)<br/>
+👤 [Facebook](https://www.facebook.com/mitchmalone)<br/>
+🐦 [Twitter](https://twitter.com/mitch__malone)<br/>
+👔 [LinkedIn](https://www.linkedin.com/in/mitchmalone)<br/>
+📍 [Nomad More](https://nomadmo.re) - digital nomad and travel blog<br/>
+📸 [Photography Portfolio](https://mitchmalone.photography)
