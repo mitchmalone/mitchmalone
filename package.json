@@ -1,0 +1,22 @@
+{
+  "name": "mitchmalone",
+  "version": "1.0.0",
+  "description": "Mitch Malone GitHub Profile Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mitchmalone/mitchmalone.git"
+  },
+  "author": "Mitch Malone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mitchmalone/mitchmalone/issues"
+  },
+  "homepage": "https://github.com/mitchmalone/mitchmalone#readme",
+  "dependencies": {
+    "mustache": "^4.2.0"
+  }
+}
