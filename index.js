@@ -1,13 +1,10 @@
-const Mustache = require('mustache');
-const fetch = require('node-fetch');
-const fs = require('fs');
-const puppeteerService = require('./services/puppeteer.service');
+var handlebars = require('handlebars');
+var fs = require('fs');
 
-const MUSTACHE_MAIN_DIR = './main.mustache';
-
-let DATA = {
+let userData = {
   name: 'Mitch',
-  now: 'Brno, Czechia',
+  from: 'Australia',
+  now: 'Czechia',
   refresh_date: new Date().toLocaleDateString('en-GB', {
     weekday: 'long',
     month: 'long',
@@ -15,29 +12,31 @@ let DATA = {
     hour: 'numeric',
     minute: 'numeric',
     timeZoneName: 'short',
-    timeZone: 'Europe/Stockholm',
+    timeZone: 'Europe/Paris',
   }),
 };
 
-async function setInstagramPosts() {
-  const instagramImages = await puppeteerService.getLatestInstagramPostsFromAccount('mitchmalone', 3);
-  DATA.img1 = instagramImages[0];
-  DATA.img2 = instagramImages[1];
-  DATA.img3 = instagramImages[2];
-}
-
 async function generateReadMe() {
-  await fs.readFile(MUSTACHE_MAIN_DIR, (err, data) => {
-    if (err) throw err;
-    const output = Mustache.render(data.toString(), DATA);
-    fs.writeFileSync('README.md', output);
+  // await fs.readFile(MUSTACHE_MAIN_DIR, (err, data) => {
+  //   if (err) throw err;
+  //   const output = Mustache.render(data.toString(), DATA);
+  //   fs.writeFileSync('README.md', output);
+  // });
+  await fs.readFile('./main.hbs', function(err, data){
+    if (!err) {
+      var source = data.toString();
+
+      var template = handlebars.compile(source);
+      var outputString = template(userData);
+      console.log(outputString);
+    } else {
+      // handle file read error
+    }
   });
 }
 
 async function action() {
-  await setInstagramPosts();
   await generateReadMe();
-  await puppeteerService.close();
 }
 
 action();

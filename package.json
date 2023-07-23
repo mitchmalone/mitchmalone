@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/mitchmalone/mitchmalone#readme",
   "dependencies": {
-    "mustache": "^4.2.0",
-    "node-fetch": "^3.3.1"
+    "handlebars": "^4.7.7"
   }
 }
