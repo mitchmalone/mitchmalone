@@ -19,12 +19,13 @@
 - **📫 How to reach me:** [My Linktree](https://linktr.ee/mitchmalone)
 
 ### ✍️ Latest Blog Posts
-
-- [Remote Worker 101](https://mitchmalone.io/blog/remote-worker-101)
-- [How Distributed Leadership Can Speed Up Your Companys Decision Making](https://mitchmalone.io/blog/how-distributed-leadership-can-speed-up-your-companys-decision-making)
-- [Nike Playbook 10 Principles](https://mitchmalone.io/blog/nike-playbook-10-principles)
-- [5 Leadership Values That Will Improve Your Teams Productivity and Job Satisfaction](https://mitchmalone.io/blog/5-leadership-values-that-will-improve-your-teams-productivity-and-job-satisfaction)
-- [5 Habits That Have Had the Biggest Impact to My Professional Life](https://mitchmalone.io/blog/5-habits-that-have-had-the-biggest-impact-to-my-professional-life)
+{{#if articles}}
+{{#each articles}}
+{{#lt @index 6}}
+- [{{title}}]({{link}})
+{{/lt}}
+{{/each}}
+{{/if}}
 
 ### 🔗 Links
 
@@ -36,5 +37,4 @@
 - **📍 [Nomad More](https://nomadmo.re)**
 - **📸 [Photography Portfolio](https://mitchmalone.photography)**
 
-Github profile automatically generates every 3 hours.
-Last generated: {{refresh_date}};
+Github profile automatically generates every 3 hours. Last generation: {{refresh_date}}.

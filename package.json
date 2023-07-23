@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mitchmalone/mitchmalone#readme",
   "dependencies": {
-    "handlebars": "^4.7.7"
+    "handlebars": "^4.7.7",
+    "rss-parser": "^3.13.0"
   }
 }
