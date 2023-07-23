@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1 align="center">Hi, I'm Mitch. 👋</h1>
 <p align="center">
   <a href="https://mitchmalone.io">Professional Blog</a> •
@@ -37,3 +38,5 @@
 - **📸 [Photography Portfolio](https://mitchmalone.photography)**
 
 Github profile automatically generates every 3 hours. Last generation: Sunday, 23 July at 10:30 CEST.
+=======
+>>>>>>> 6062ade (Clear README for test purposes)
