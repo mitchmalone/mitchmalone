@@ -28,7 +28,7 @@ async function generateReadMe() {
 
       var template = handlebars.compile(source);
       var outputString = template(userData);
-      console.log(outputString);
+      fs.writeFileSync('README.md', outputString);
     } else {
       // handle file read error
     }
