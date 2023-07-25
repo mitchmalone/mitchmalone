@@ -22,24 +22,6 @@ handlebars.registerHelper('lt', function( a, b ){
 	return (a < b) ? next.fn(this) : next.inverse(this);
 });
 
-// async function setWeatherInformation() {
-//   userData.city_temperature = 18.0;
-//   userData.city_weather = 'Brno, Czechi';
-//   userData.city_weather_icon = '10d';
-
-//   // await fetch(`https://api.openweathermap.org/data/2.5/weather?q=stockholm&appid=${process.env.OPEN_WEATHER_MAP_KEY}&units=metric`)
-//   // const lat = '49.2019854';
-//   // const lon = '16.4378777';
-//   // const API = '4986655aa56607aa6186e3860377ee02';
-//   // await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${API}`)
-//   //   .then(r => r.json())
-//   //   .then(r => {
-//   //     userData.city_temperature = Math.round(r.main.temp);
-//   //     userData.city_weather = r.weather[0].description;
-//   //     userData.city_weather_icon = r.weather[0].icon;
-//   //   });
-// }
-
 async function getRssFeeds() {
   let Parser = require('rss-parser');
   let parser = new Parser();
