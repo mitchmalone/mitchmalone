@@ -19,12 +19,12 @@
 - **📫 How to reach me:** [My Linktree](https://linktr.ee/mitchmalone)
 
 ### ✍️ Latest Blog Posts
+- [The Imperfectionist: The four-hour work day](https://mitchmalone.io/blog/the-imperfectionist-the-four-hour-work-day)
 - [7 Life Lessons School Should’ve Taught You, But Didn’t](https://mitchmalone.io/blog/7-life-lessons-youtube-ali-abdaal)
 - [ChatGPT 4 runs bank account and saves owner money](https://mitchmalone.io/blog/autgpt-runs-bank-account-saves-owner-money)
 - [How Distributed Leadership Can Speed Up Your Company&#x27;s Decision-Making](https://mitchmalone.io/blog/how-distributed-leadership-can-speed-up-your-companys-decision-making)
 - [Nike Playbook](https://mitchmalone.io/blog/nike-playbook-10-principles)
 - [5 Leadership Values That Will Improve Your Team&#x27;s Productivity and Job Satisfaction](https://mitchmalone.io/blog/5-leadership-values-that-will-improve-your-teams-productivity-and-job-satisfaction)
-- [5 habits that have had the biggest impact to my professional life](https://mitchmalone.io/blog/5-habits-that-have-had-the-biggest-impact-to-my-professional-life)
 
 ### 🔗 Links
 
@@ -36,4 +36,4 @@
 - **📍 [Nomad More](https://nomadmo.re)**
 - **📸 [Photography Portfolio](https://mitchmalone.photography)**
 
-Github profile automatically generates every 3 hours. Last generation: Saturday, 5 August at 08:06 CEST.
+Github profile automatically generates every 3 hours. Last generation: Saturday, 5 August at 11:05 CEST.
