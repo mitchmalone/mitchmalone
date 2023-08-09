@@ -19,7 +19,7 @@
 - **📫 How to reach me:** [My Linktree](https://linktr.ee/mitchmalone)
 
 ### ✍️ Latest Blog Posts
-- [How to Work With Mitch](https://mitchmalone.io/blog/how-to-work-with-me)
+- [How to Work With Mitch](https://mitchmalone.io/blog/how-to-work-with-mitch-malone)
 - [The Imperfectionist: The four-hour work day](https://mitchmalone.io/blog/the-imperfectionist-the-four-hour-work-day)
 - [7 Life Lessons School Should’ve Taught You, But Didn’t](https://mitchmalone.io/blog/7-life-lessons-youtube-ali-abdaal)
 - [ChatGPT 4 runs bank account and saves owner money](https://mitchmalone.io/blog/autgpt-runs-bank-account-saves-owner-money)
@@ -36,4 +36,4 @@
 - **📍 [Nomad More](https://nomadmo.re)**
 - **📸 [Photography Portfolio](https://mitchmalone.photography)**
 
-Github profile automatically generates every 3 hours. Last generation: Wednesday, 9 August at 20:06 CEST.
+Github profile automatically generates every 3 hours. Last generation: Wednesday, 9 August at 23:06 CEST.
