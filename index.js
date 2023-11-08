@@ -4,7 +4,7 @@ var fs = require('fs');
 let userData = {
   name: 'Mitch',
   from: 'Australia',
-  now: 'Czechia',
+  now: 'Germany',
   articles: [],
   refresh_date: new Date().toLocaleDateString('en-GB', {
     weekday: 'long',
