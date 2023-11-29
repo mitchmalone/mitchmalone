@@ -20,11 +20,11 @@
 
 ### ✍️ Latest Blog Posts
 - [AI ethics happening in the real world, not just armchair debate](https://mitchmalone.io/blog/ai-ethics-are-happening-in-the-real-world-and-not-just-armchair-debate)
+- [Money saving tips for long term travelers and digital nomads](https://mitchmalone.io/blog/money-saving-tips-for-long-term-travelers-and-digital-nomads)
 - [How to Work With Mitch](https://mitchmalone.io/blog/how-to-work-with-mitch-malone)
 - [The Imperfectionist: The four-hour work day](https://mitchmalone.io/blog/the-imperfectionist-the-four-hour-work-day)
 - [7 Life Lessons School Should’ve Taught You, But Didn’t](https://mitchmalone.io/blog/7-life-lessons-youtube-ali-abdaal)
-- [ChatGPT 4 runs bank account and saves owner money](https://mitchmalone.io/blog/autgpt-runs-bank-account-saves-owner-money)
-- [How Distributed Leadership Can Speed Up Your Company&#x27;s Decision-Making](https://mitchmalone.io/blog/how-distributed-leadership-can-speed-up-your-companys-decision-making)
+- [Remote Worker 101](https://mitchmalone.io/blog/remote-worker-101)
 
 ### 🔗 Links
 
@@ -36,4 +36,4 @@
 - **📍 [Nomad More](https://nomadmo.re)**
 - **📸 [Photography Portfolio](https://mitchmalone.photography)**
 
-Github profile automatically generates every 3 hours. Last generation: Wednesday, 29 November at 07:06 CET.
+Github profile automatically generates every 3 hours. Last generation: Wednesday, 29 November at 10:06 CET.
