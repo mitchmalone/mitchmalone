@@ -4,7 +4,7 @@ var fs = require('fs');
 let userData = {
   name: 'Mitch',
   from: 'Australia',
-  now: 'Germany',
+  now: 'The Netherlands',
   articles: [],
   refresh_date: new Date().toLocaleDateString('en-GB', {
     weekday: 'long',
@@ -70,7 +70,6 @@ async function generateReadMe() {
 }
 
 async function action() {
-  // await setWeatherInformation();
   await getRssFeeds();
   await generateReadMe();
 }
