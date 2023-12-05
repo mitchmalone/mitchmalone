@@ -9,14 +9,14 @@
 
 ### 👨‍🎤 About
 
-**😄 Pronouns:** he/him/his.
-**👋 About:** Software engineer for 20+ years turned post-technical product and engineering lead.
-**📍 Location:** Digital nomad. Originally Australia, now Germany.
-**🎒 Work:** [Currently available](https://mitchmalone.io) for freelance and contract roles.
-**📹 Other:** [Photographer](https://mitchmalone.photography), [content creator](https://nomadmo.re), constant learner.
-**🌱 Currently learning:** Always learning with a huge reading list on product and design.
-**💬 Ask me about:** Tech and product leadership, post-technical value for engineering managers, van life, travel, and digital nomadism.
-**📫 How to reach me:** [My Linktree](https://linktr.ee/mitchmalone)
+- **😄 Pronouns:** he/him/his.
+- **👋 About:** Software engineer for 20+ years turned post-technical product and engineering lead.
+- **📍 Location:** Digital nomad. Originally Australia, now Germany.
+- **🎒 Work:** [Currently available](https://mitchmalone.io) for freelance and contract roles.
+- **📹 Other:** [Photographer](https://mitchmalone.photography), [content creator](https://nomadmo.re), constant learner.
+- **🌱 Currently learning:** Always learning with a huge reading list on product and design.
+- **💬 Ask me about:** Tech and product leadership, post-technical value for engineering managers, van life, travel, and digital nomadism.
+- **📫 How to reach me:** [My Linktree](https://linktr.ee/mitchmalone)
 
 ### ✍️ Latest Blog Posts
 - [AI ethics happening in the real world, not just armchair debate](https://mitchmalone.io/blog/ai-ethics-are-happening-in-the-real-world-and-not-just-armchair-debate)
@@ -36,4 +36,4 @@
 - **📍 [Nomad More](https://nomadmo.re)**
 - **📸 [Photography Portfolio](https://mitchmalone.photography)**
 
-Github profile automatically generates every 3 hours. Last generation: Tuesday, 5 December at 16:31 CET.
+Github profile automatically generates every 3 hours. Last generation: Tuesday, 5 December at 16:51 CET.
