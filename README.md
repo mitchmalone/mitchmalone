@@ -19,12 +19,12 @@
 - **📫 How to reach me:** [My Linktree](https://linktr.ee/mitchmalone)
 
 ### ✍️ Latest Blog Posts
+- [A proposed alternative to returning to the office](https://mitchmalone.io/blog/proposed-alternative-to-returning-to-the-office)
 - [AI ethics happening in the real world, not just armchair debate](https://mitchmalone.io/blog/ai-ethics-are-happening-in-the-real-world-and-not-just-armchair-debate)
 - [Money saving tips for long term travelers and digital nomads](https://mitchmalone.io/blog/money-saving-tips-for-long-term-travelers-and-digital-nomads)
 - [How to Work With Mitch](https://mitchmalone.io/blog/how-to-work-with-mitch-malone)
 - [The Imperfectionist: The four-hour work day](https://mitchmalone.io/blog/the-imperfectionist-the-four-hour-work-day)
 - [7 Life Lessons School Should’ve Taught You, But Didn’t](https://mitchmalone.io/blog/7-life-lessons-youtube-ali-abdaal)
-- [Remote Worker 101](https://mitchmalone.io/blog/remote-worker-101)
 
 ### 🔗 Links
 
@@ -36,4 +36,4 @@
 - **📍 [Nomad More](https://nomadmo.re)**
 - **📸 [Photography Portfolio](https://mitchmalone.photography)**
 
-Github profile automatically generates every 3 hours. Last generation: Saturday, 9 December at 22:05 CET.
+Github profile automatically generates every 3 hours. Last generation: Sunday, 10 December at 01:24 CET.
