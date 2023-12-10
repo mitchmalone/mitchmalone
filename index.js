@@ -4,6 +4,10 @@ let fetch = require('node-fetch');
 let Parser = require('rss-parser');
 let parser = new Parser();
 
+// const blogFeed = 'https://mitchmalone.io/feed';
+const blogFeed = 'https://medium.com/feed/@mitchmalone';
+const travelData = 'https://nomadmo.re/api/travel-data';
+
 let userData = {
   name: 'Mitch',
   from: 'Australia',
@@ -33,8 +37,8 @@ async function getRssFeeds() {
 
   do {
     try {
-      console.log(`Attempted ${retries+1} to fetch https://mitchmalone.io/feed`)
-      await parser.parseURL('https://mitchmalone.io/feed', (err, feed) => {
+      console.log(`Attempted ${retries+1} to fetch ${blogFeed}`)
+      await parser.parseURL(blogFeed, (err, feed) => {
         if(err) {
           userData.articles = [];
           console.log('ERR', err);
@@ -61,8 +65,8 @@ async function getTravelData() {
   let status = 0;
 
   do {
-    console.log(`Attempted ${retries+1} to fetch https://nomadmo.re/api/travel-data`);
-    const response = await fetch('https://nomadmo.re/api/travel-data');
+    console.log(`Attempted ${retries+1} to fetch ${travelData}`);
+    const response = await fetch(travelData);
     const data = await response.json();
 
     status = response.status;
