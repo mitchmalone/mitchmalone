@@ -19,12 +19,8 @@
 - **📫 How to reach me:** [My Linktree](https://linktr.ee/mitchmalone)
 
 ### ✍️ Latest Blog Posts
-- [A proposed alternative to returning to the office](https://mitchmalone.io/blog/proposed-alternative-to-returning-to-the-office)
-- [AI ethics happening in the real world, not just armchair debate](https://mitchmalone.io/blog/ai-ethics-are-happening-in-the-real-world-and-not-just-armchair-debate)
-- [Money saving tips for long term travelers and digital nomads](https://mitchmalone.io/blog/money-saving-tips-for-long-term-travelers-and-digital-nomads)
-- [How to Work With Mitch](https://mitchmalone.io/blog/how-to-work-with-mitch-malone)
-- [The Imperfectionist: The four-hour work day](https://mitchmalone.io/blog/the-imperfectionist-the-four-hour-work-day)
-- [7 Life Lessons School Should’ve Taught You, But Didn’t](https://mitchmalone.io/blog/7-life-lessons-youtube-ali-abdaal)
+- [A proposed alternative to returning to the office](https://mitchmalone.medium.com/a-proposed-alternative-to-returning-to-the-office-6a4bacebabc6?source&#x3D;rss-dc3c26aefde1------2)
+- [AI ethics happening in the real world, not just armchair debate](https://mitchmalone.medium.com/ai-ethics-happening-in-the-real-world-not-just-armchair-debate-6121f07053fd?source&#x3D;rss-dc3c26aefde1------2)
 
 ### 🔗 Links
 
@@ -36,4 +32,4 @@
 - **📍 [Nomad More](https://nomadmo.re)**
 - **📸 [Photography Portfolio](https://mitchmalone.photography)**
 
-Github profile automatically generates every 3 hours. Last generation: Sunday, 10 December at 17:38 CET.
+Github profile automatically generates every 3 hours. Last generation: Sunday, 10 December at 17:41 CET.
