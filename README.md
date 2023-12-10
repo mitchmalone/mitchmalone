@@ -11,7 +11,7 @@
 
 - **😄 Pronouns:** he/him/his.
 - **👋 About:** Software engineer for 20+ years turned post-technical product and engineering lead.
-- **📍 Location:** Digital nomad. Originally Australia, now The Netherlands.
+- **📍 Location:** Digital nomad. Originally Australia, now <a href="https://maps.google.com/?q=49.67065,5.94252&ll=49.67065,5.94252&z=6">Luxembourg</a>.
 - **🎒 Work:** [Currently available](https://mitchmalone.io) for freelance and contract roles.
 - **📹 Other:** [Photographer](https://mitchmalone.photography), [content creator](https://nomadmo.re), constant learner.
 - **🌱 Currently learning:** Always learning with a huge reading list on product and design.
@@ -36,4 +36,4 @@
 - **📍 [Nomad More](https://nomadmo.re)**
 - **📸 [Photography Portfolio](https://mitchmalone.photography)**
 
-Github profile automatically generates every 3 hours. Last generation: Sunday, 10 December at 16:05 CET.
+Github profile automatically generates every 3 hours. Last generation: Sunday, 10 December at 17:35 CET.
