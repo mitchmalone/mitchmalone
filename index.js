@@ -4,10 +4,15 @@ let fetch = require('node-fetch');
 let Parser = require('rss-parser');
 let parser = new Parser();
 
-// const blogFeed = 'https://mitchmalone.io/feed';
+/**
+ * Sets up the URLs for data fetching
+ */
 const blogFeed = 'https://medium.com/feed/@mitchmalone';
 const travelData = 'https://nomadmo.re/api/travel-data';
 
+/**
+ * Sets up the user object with some defauls
+ */
 let userData = {
   name: 'Mitch',
   from: 'Australia',
@@ -26,11 +31,17 @@ let userData = {
   }),
 };
 
+/**
+ * Helper for formatting the Handlebars template. Old school, right?
+ */
 handlebars.registerHelper('lt', function( a, b ){
 	var next =  arguments[arguments.length-1];
 	return (a < b) ? next.fn(this) : next.inverse(this);
 });
 
+/**
+ * Fetch latest articles from the blog
+ */
 async function getRssFeeds() {
   let retries = 0;
   keepTrying = true;
@@ -60,6 +71,9 @@ async function getRssFeeds() {
   } while (retries < 10 && userData.articles.length === 0)
 }
 
+/**
+ * Fetch travel data
+ */
 async function getTravelData() {
   let retries = 0;
   let status = 0;
@@ -80,16 +94,17 @@ async function getTravelData() {
   } while (retries < 10 && status !== 200)
 }
 
+/**
+ * Generates the README.md file from the Handlebars template.
+ */
 async function generateReadMe() {
-  await fs.readFile('./main.hbs', function(err, data){
+  await fs.readFile('./template.hbs', function(err, data){
     if (!err) {
       var source = data.toString();
 
       var template = handlebars.compile(source);
       var outputString = template(userData);
       fs.writeFileSync('README.md', outputString);
-    } else {
-      // handle file read error
     }
   });
 }
