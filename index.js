@@ -74,9 +74,6 @@ async function getTravelData() {
       }
     }
   } while (retries < 10 && status !== 200)
-  
-  console.log(userData)
-  // const data = await response.json();
 }
 
 async function generateReadMe() {
