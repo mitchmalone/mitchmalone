@@ -1,10 +1,15 @@
-var handlebars = require('handlebars');
-var fs = require('fs');
+let handlebars = require('handlebars');
+let fs = require('fs');
+let fetch = require('node-fetch');
+let Parser = require('rss-parser');
+let parser = new Parser();
 
 let userData = {
   name: 'Mitch',
   from: 'Australia',
-  now: 'The Netherlands',
+  now: {},
+  locationCount: 0,
+  countryCount: 0,
   articles: [],
   refresh_date: new Date().toLocaleDateString('en-GB', {
     weekday: 'long',
@@ -23,36 +28,55 @@ handlebars.registerHelper('lt', function( a, b ){
 });
 
 async function getRssFeeds() {
-  let Parser = require('rss-parser');
-  let parser = new Parser();
-
   let retries = 0;
+  keepTrying = true;
 
   do {
-      try {
-          console.log(`Attempted ${retries+1} to fetch https://mitchmalone.io/feed`)
-          await parser.parseURL('https://mitchmalone.io/feed', (err, feed) => {
-          if(err) {
-            userData.articles = [];
-            console.log('ERR', err);
-            return false;
+    try {
+      console.log(`Attempted ${retries+1} to fetch https://mitchmalone.io/feed`)
+      await parser.parseURL('https://mitchmalone.io/feed', (err, feed) => {
+        if(err) {
+          userData.articles = [];
+          console.log('ERR', err);
+          return false;
+        }
+
+        userData.articles = feed.items.map(article => {
+          return {
+            ...article,
+            title: article.title.replaceAll('*', '')
           }
+        });
+      });          
 
-          userData.articles = feed.items.map(article => {
-            return {
-              ...article,
-              title: article.title.replaceAll('*', '')
-            }
-          });
-        });          
+      retries++;
+    } catch {
+      retries++;
+    }
+  } while (retries < 10 && userData.articles.length === 0)
+}
 
-          retries++;
-          keepTrying = false;
-      } catch {
-          retries++;
-          keepTrying = true;
+async function getTravelData() {
+  let retries = 0;
+  let status = 0;
+
+  do {
+    console.log(`Attempted ${retries+1} to fetch https://nomadmo.re/api/travel-data`);
+    const response = await fetch('https://nomadmo.re/api/travel-data');
+    const data = await response.json();
+
+    status = response.status;
+
+    if (status === 200) {
+      userData = {
+        ...userData,
+        ...data
       }
-  } while (retries < 11 && userData.articles.length === 0)
+    }
+  } while (retries < 10 && status !== 200)
+  
+  console.log(userData)
+  // const data = await response.json();
 }
 
 async function generateReadMe() {
@@ -70,6 +94,7 @@ async function generateReadMe() {
 }
 
 async function action() {
+  await getTravelData();
   await getRssFeeds();
   await generateReadMe();
 }
