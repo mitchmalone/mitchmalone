@@ -11,7 +11,7 @@
 
 Hi, I'm Mitch! I am a post-technical product and engineering leader with 20+ years of experience in software engineering, product management, and engineering management. I am currently on a career break traveling in Europe with my wife. Since 2018 I have visited **29** countries and worked from **264** distinct locations.
 
-In 2024 I will be available for new opportnuities.
+✨✨ **In 2024 I will be available for new remote opportnuities in Australia, US and Canada** ✨✨
 
 - **😄 Pronouns:** he/him/his.
 - **👋 About:** Software engineer for 20+ years turned post-technical product and engineering lead.
@@ -35,4 +35,4 @@ In 2024 I will be available for new opportnuities.
 - **📍 [Nomad More](https://nomadmo.re)**
 - **📸 [Photography Portfolio](https://mitchmalone.photography)**
 
-Github profile automatically generates every 3 hours. Last generation: Sunday, 10 December at 17:47 CET.
+Github profile automatically generates every 3 hours. Last generation: Sunday, 10 December at 17:51 CET.
