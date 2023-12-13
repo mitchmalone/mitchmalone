@@ -1,10 +1,11 @@
-const fs = require('fs').promises;
-const fetch = require('node-fetch');
-const Parser = require('rss-parser');
-const handlebars = require('handlebars');
-const Twitter = require("twitter");
+import fs from 'fs/promises';
+import fetch from 'node-fetch';
+import Parser from 'rss-parser';
+import handlebars from 'handlebars';
+import Twitter from 'twitter';
+import { throwErrorAndExit } from './helpers/errorHelpers.js';
 
-require("dotenv").config();
+import 'dotenv/config';
 
 /**
  * Sets up the URLs for data fetching
@@ -16,23 +17,6 @@ const travelData = 'https://nomadmo.re/api/travel-data';
  * Sets up the user object with some defauls
  */
 let userData = {};
-// let userData = {
-//   name: 'Mitch',
-//   from: 'Australia',
-//   now: {},
-//   locationCount: 0,
-//   countryCount: 0,
-//   articles: [],
-//   refresh_date: new Date().toLocaleDateString('en-GB', {
-//     weekday: 'long',
-//     month: 'long',
-//     day: 'numeric',
-//     hour: 'numeric',
-//     minute: 'numeric',
-//     timeZoneName: 'short',
-//     timeZone: 'Europe/Paris',
-//   }),
-// };
 
 /**
  * Helper for formatting the Handlebars template. Old school, right?
@@ -164,17 +148,7 @@ async function updateTwitterBioLocation(client, location) {
   )
 }
 
-const throwErrorAndExit = (message, err) => {
-  if (message) {
-    console.error(`❌ ERROR: ${message}`);
-  }
 
-  if (err) {
-    console.error(err);
-  }
-
-  process.exit(1);
-}
 
 async function action() {
   await createUserProfile();
