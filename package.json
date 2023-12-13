@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/mitchmalone/mitchmalone#readme",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "handlebars": "^4.7.7",
     "node-fetch": "^2.7.0",
-    "rss-parser": "^3.13.0"
+    "rss-parser": "^3.13.0",
+    "twitter": "^1.1.0"
   }
 }
