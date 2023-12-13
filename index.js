@@ -3,7 +3,6 @@ const fetch = require('node-fetch');
 const Parser = require('rss-parser');
 const handlebars = require('handlebars');
 const Twitter = require("twitter");
-const { resolve } = require('path');
 
 require("dotenv").config();
 
@@ -48,7 +47,7 @@ handlebars.registerHelper('lt', function( a, b ){
 async function getBlogData() {
   let parser = new Parser();
 
-  console.log(`🐶 Attempting to fetch ${blogFeed}`);
+  console.log(`🐶 Attempting to fetch blog data from ${blogFeed}`);
   let feed = await parser.parseURL(blogFeed);
 
   userData.articles = feed.items.map(article => {
@@ -65,7 +64,7 @@ async function getBlogData() {
  * Fetch travel data
  */
 async function getTravelData() {
-  console.log(`🐶 Attempting to fetch ${travelData}`);
+  console.log(`🐶 Attempting to fetch travel data from ${travelData}`);
 
   await fetch(travelData).then(async (response) => {
     const data = await response.json();
@@ -86,13 +85,17 @@ async function getTravelData() {
  * Generates the README.md file from the Handlebars template.
  */
 async function generateReadMe() {
-  await fs.readFile('./template.hbs', function(err, data){
+  console.log(`⚙️ Generating README.md file.`);
+  
+  return await fs.readFile('./template.hbs', function(err, data){
     if (!err) {
       var source = data.toString();
 
       var template = handlebars.compile(source);
       var outputString = template(userData);
       fs.writeFileSync('README.md', outputString);
+
+      console.log(`✅ Success! README.md file generated.`);
     }
   });
 }
@@ -102,29 +105,33 @@ async function generateReadMe() {
  */
 async function verifyTwitterCredentials() {
   const client = new Twitter({
-    consumer_key: process.env.TWITTER_CONSUMER_KEY,
-    consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-    access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
-    access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+    consumer_key: process.env.APP_API_KEY,
+    consumer_secret: process.env.APP_API_KEY_SECRET,
+    access_token_key: process.env.USER_ACCESS_TOKEN,
+    access_token_secret: process.env.USER_ACCESS_TOKEN_SECRET
   });
 
   console.log(`🛂 Verifying Twitter credentials.`);
 
   return await client.get("account/verify_credentials", (err, res) => {
     if (err) {
-      throwErrorAndExit(`🚨 ERROR: could not verify your Twitter credentials`, err);
+      throwErrorAndExit(`Could not verify your Twitter credentials`, err);
     }
 
     if (res) {
       console.log(`✅ Success! Verified @${res.screen_name} Twitter credentials (${res.followers_count} followers).`);
 
-      const whereAmI = `${userData.now.name}, ${userData.now.country}`;
+      if(userData.now.name && userData.now.country) {
+        const whereAmI = `${userData.now.name}, ${userData.now.country}`;
 
-      if(res.location !== whereAmI) {
-        console.log(`🗺️  Updating Twitter location to ${whereAmI}`);
-        updateTwitterBioLocation(client, whereAmI);
+        if(res.location !== whereAmI) {
+          console.log(`🗺️  Updating Twitter location to ${whereAmI}`);
+          updateTwitterBioLocation(client, whereAmI);
+        } else {
+          console.log(`⏭️  Skipping location update! Twitter bio/location already ${res.location}.`);
+        }
       } else {
-        console.log(`⏭️  Skip! Twitter bio/location already ${res.location}.`);
+        console.log(`⏭️  Skipping location update! No location set.`);
       }
     }
   })
@@ -134,7 +141,7 @@ async function updateTwitterBioLocation(client, location) {
   return await client.post( "account/update_profile", {location}, async (err) => {
       if (err) {
         console.error(err);
-        throwErrorAndExit(`\n Failed to update Twitter bio location.`);
+        throwErrorAndExit(`Failed to update Twitter bio location.`);
       }
 
       console.log(`✅ Success! Updated Twitter bio/location to ${location}`);
@@ -142,9 +149,13 @@ async function updateTwitterBioLocation(client, location) {
   )
 }
 
-const throwErrorAndExit = (message) => {
+const throwErrorAndExit = (message, err) => {
   if (message) {
     console.error(`❌ ERROR: ${message}`);
+  }
+
+  if (err) {
+    console.error(err);
   }
 
   process.exit(1);
@@ -153,8 +164,8 @@ const throwErrorAndExit = (message) => {
 async function action() {
   await getTravelData();
   await getBlogData();
-  await verifyTwitterCredentials();
   await generateReadMe();
+  await verifyTwitterCredentials();
 }
 
 action();
