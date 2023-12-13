@@ -1,0 +1,66 @@
+{
+  "name": "Mitch",
+  "description": "Hi, I'm Mitch! I am a post-technical product and engineering leader with 20+ years of experience in software engineering, product management, and engineering management. I am currently on a career break traveling in Europe with my wife.",
+  "pronouns": "he/him/his.",
+  "work": "**Available for new remote opportnuities in Australia, US and Canada.**",
+  "learning": "Always learning with a huge reading list on product and design.",
+  "askAbout": "Tech and product leadership, post-technical value for engineering managers, van life, travel, and digital nomadism.",
+  "reachMe": "[My Linktree](https://linktr.ee/mitchmalone)",
+  "from": "Australia",
+  "now": null,
+  "locationCount": null,
+  "countryCount": null,
+  "articles": [],
+  "refresh_date": null,
+  "headerLinks": [
+    {
+      "title": "Professional Blog",
+      "link": "https://mitchmalone.io"
+    },
+    {
+      "title": "Travel Blog",
+      "link": "https://nomadmo.re"
+    },
+    {
+      "title": "Photography Portfolio",
+      "link": "https://mitchmalone.photography"
+    }
+  ],
+  "otherLinks": [
+    {
+      "title": "Linktree",
+      "link": "https://linktr.ee/mitchmalone",
+      "emoji": "🔗"
+    },
+    {
+      "title": "Instagram",
+      "link": "https://www.instagram.com/mitchmalone",
+      "emoji": "📸"
+    },
+    {
+      "title": "Facebook",
+      "link": "https://www.facebook.com/mitchmalone",
+      "emoji": "👤"
+    },
+    {
+      "title": "Twitter",
+      "link": "https://twitter.com/mitch__malone",
+      "emoji": "🐦"
+    },
+    {
+      "title": "LinkedIn",
+      "link": "https://www.linkedin.com/in/mitchmalone",
+      "emoji": "👔"
+    },
+    {
+      "title": "Nomad More",
+      "link": "https://nomadmo.re",
+      "emoji": "📍"
+    },
+    {
+      "title": "Photography Portfolio",
+      "link": "https://mitchmalone.photography",
+      "emoji": "📸"
+    }
+  ]
+}

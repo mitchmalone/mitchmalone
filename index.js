@@ -15,23 +15,24 @@ const travelData = 'https://nomadmo.re/api/travel-data';
 /**
  * Sets up the user object with some defauls
  */
-let userData = {
-  name: 'Mitch',
-  from: 'Australia',
-  now: {},
-  locationCount: 0,
-  countryCount: 0,
-  articles: [],
-  refresh_date: new Date().toLocaleDateString('en-GB', {
-    weekday: 'long',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    timeZoneName: 'short',
-    timeZone: 'Europe/Paris',
-  }),
-};
+let userData = {};
+// let userData = {
+//   name: 'Mitch',
+//   from: 'Australia',
+//   now: {},
+//   locationCount: 0,
+//   countryCount: 0,
+//   articles: [],
+//   refresh_date: new Date().toLocaleDateString('en-GB', {
+//     weekday: 'long',
+//     month: 'long',
+//     day: 'numeric',
+//     hour: 'numeric',
+//     minute: 'numeric',
+//     timeZoneName: 'short',
+//     timeZone: 'Europe/Paris',
+//   }),
+// };
 
 /**
  * Helper for formatting the Handlebars template. Old school, right?
@@ -40,6 +41,12 @@ handlebars.registerHelper('lt', function( a, b ){
 	var next =  arguments[arguments.length-1];
 	return (a < b) ? next.fn(this) : next.inverse(this);
 });
+
+async function createUserProfile() {
+  // open user.json and store data in a variable
+  let user = await fs.readFile('./user.json', 'utf8')
+  userData = JSON.parse(user);
+}
 
 /**
  * Fetch latest articles from the blog
@@ -84,28 +91,26 @@ async function getTravelData() {
 /**
  * Generates the README.md file from the Handlebars template.
  */
-// async function generateReadMe() {
-//   console.log(`⚙️ Generating README.md file.`);
-  
-//   return await fs.readFile('./template.hbs', function(err, data){
-//     if (!err) {
-//       var source = data.toString();
-
-//       var template = handlebars.compile(source);
-//       var outputString = template(userData);
-//       fs.writeFileSync('README.md', outputString);
-
-//       console.log(`✅ Success! README.md file generated.`);
-//     }
-//   });
-// }
 async function generateReadMe() {
   console.log(`⚙️ Generating README.md file.`);
 
   const file = await fs.readFile('./template.hbs', 'utf8');
   var source = file.toString();
   var template = handlebars.compile(source);
-  var outputString = template(userData);
+
+  var outputString = template({
+    ...userData,
+    refresh_date: new Date().toLocaleDateString('en-GB', {
+      weekday: 'long',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      timeZoneName: 'short',
+      timeZone: 'Europe/Paris'
+    })
+  });
+  
   await fs.writeFile('README.md', outputString);
   console.log(`✅ Success! README.md file generated.`);
 }
@@ -172,6 +177,7 @@ const throwErrorAndExit = (message, err) => {
 }
 
 async function action() {
+  await createUserProfile();
   await getTravelData();
   await getBlogData();
   await generateReadMe();
