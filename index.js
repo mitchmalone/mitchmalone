@@ -3,6 +3,8 @@ const fetch = require('node-fetch');
 const Parser = require('rss-parser');
 const handlebars = require('handlebars');
 const Twitter = require("twitter");
+const { resolve } = require('path');
+
 require("dotenv").config();
 
 /**
@@ -43,57 +45,41 @@ handlebars.registerHelper('lt', function( a, b ){
 /**
  * Fetch latest articles from the blog
  */
-async function getRssFeeds() {
+async function getBlogData() {
   let parser = new Parser();
-  let retries = 0;
-  keepTrying = true;
 
-  do {
-    try {
-      console.log(`🐶 Attempt #${retries+1} to fetch ${blogFeed}`);
-      await parser.parseURL(blogFeed, (err, feed) => {
-        if(err) {
-          userData.articles = [];
-          retries++;
-          return false;
-        } else {
-          userData.articles = feed.items.map(article => {
-            return {
-              ...article,
-              title: article.title.replaceAll('*', '')
-            }
-          });
-        }
-      });          
-    } catch {
-      retries++;
+  console.log(`🐶 Attempting to fetch ${blogFeed}`);
+  let feed = await parser.parseURL(blogFeed);
+
+  userData.articles = feed.items.map(article => {
+    return {
+      ...article,
+      title: article.title.replaceAll('*', '')
     }
-  } while (retries < 10 && userData.articles.length === 0)
+  });
+
+  console.log(`✅ Success! Blog data fetched ${userData.articles.length} articles.`);
 }
 
 /**
  * Fetch travel data
  */
 async function getTravelData() {
-  let retries = 0;
-  let status = 0;
+  console.log(`🐶 Attempting to fetch ${travelData}`);
 
-  do {
-    console.log(`🐶 Attempt #${retries+1} to fetch ${travelData}`);
-    const response = await fetch(travelData);
+  await fetch(travelData).then(async (response) => {
     const data = await response.json();
-    status = response.status;
-
-    if (status === 200) {
+    if (response.status === 200) {
       userData = {
         ...userData,
         ...data
       }
-      console.log(`✅ User data fetched and updated from ${travelData}.`);
-    } else {
-      retries++;
+      
+      console.log(`✅ Success! User data fetched and updated from ${travelData}.`);
     }
-  } while (retries < 10 && status !== 200)
+  }).catch(async (error) => {
+    throwErrorAndExit(`Failed to fetch ${travelData}`);
+  });
 }
 
 /**
@@ -120,7 +106,9 @@ async function verifyTwitterCredentials() {
     consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
     access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-  })
+  });
+
+  console.log(`🛂 Verifying Twitter credentials.`);
 
   return await client.get("account/verify_credentials", (err, res) => {
     if (err) {
@@ -128,13 +116,15 @@ async function verifyTwitterCredentials() {
     }
 
     if (res) {
-      const followerCount = res.followers_count;
-      console.log(`✅ Verified Twitter credentials.`);
-      console.log(`#️⃣ Current follower count is ${followerCount}`);
+      console.log(`✅ Success! Verified @${res.screen_name} Twitter credentials (${res.followers_count} followers).`);
 
-      const whereAmI = `${userData.now.name}, ${userData.now.country}`
+      const whereAmI = `${userData.now.name}, ${userData.now.country}`;
+
       if(res.location !== whereAmI) {
+        console.log(`🗺️  Updating Twitter location to ${whereAmI}`);
         updateTwitterBioLocation(client, whereAmI);
+      } else {
+        console.log(`⏭️  Skip! Twitter bio/location already ${res.location}.`);
       }
     }
   })
@@ -147,25 +137,24 @@ async function updateTwitterBioLocation(client, location) {
         throwErrorAndExit(`\n Failed to update Twitter bio location.`);
       }
 
-      console.log("\n🎉 Success! Updated Twitter bio/location");
+      console.log(`✅ Success! Updated Twitter bio/location to ${location}`);
     }
   )
 }
 
-const throwErrorAndExit = (message, err) => {
-  if (err) {
-    console.error(err);
+const throwErrorAndExit = (message) => {
+  if (message) {
+    console.error(`❌ ERROR: ${message}`);
   }
 
-  throw new Error(`❌ ERROR: ${message}`);
   process.exit(1);
 }
 
 async function action() {
   await getTravelData();
-  await getRssFeeds();
-  await generateReadMe();
+  await getBlogData();
   await verifyTwitterCredentials();
+  await generateReadMe();
 }
 
 action();
