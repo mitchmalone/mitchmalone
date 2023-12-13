@@ -74,6 +74,7 @@ web_modules/
 
 # dotenv environment variable files
 .env
+.env.*
 .env.development.local
 .env.test.local
 .env.production.local
@@ -134,9 +135,6 @@ dist
 public
 static/admin/*.bundle.*
 .DS_Store
-.env.local
-.env.development
-.env.production
 package-lock.json
 
 # Local Netlify folder
