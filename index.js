@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs').promises;
 const fetch = require('node-fetch');
 const Parser = require('rss-parser');
 const handlebars = require('handlebars');
@@ -84,20 +84,30 @@ async function getTravelData() {
 /**
  * Generates the README.md file from the Handlebars template.
  */
+// async function generateReadMe() {
+//   console.log(`⚙️ Generating README.md file.`);
+  
+//   return await fs.readFile('./template.hbs', function(err, data){
+//     if (!err) {
+//       var source = data.toString();
+
+//       var template = handlebars.compile(source);
+//       var outputString = template(userData);
+//       fs.writeFileSync('README.md', outputString);
+
+//       console.log(`✅ Success! README.md file generated.`);
+//     }
+//   });
+// }
 async function generateReadMe() {
   console.log(`⚙️ Generating README.md file.`);
-  
-  return await fs.readFile('./template.hbs', function(err, data){
-    if (!err) {
-      var source = data.toString();
 
-      var template = handlebars.compile(source);
-      var outputString = template(userData);
-      fs.writeFileSync('README.md', outputString);
-
-      console.log(`✅ Success! README.md file generated.`);
-    }
-  });
+  const file = await fs.readFile('./template.hbs', 'utf8');
+  var source = file.toString();
+  var template = handlebars.compile(source);
+  var outputString = template(userData);
+  await fs.writeFile('README.md', outputString);
+  console.log(`✅ Success! README.md file generated.`);
 }
 
 /*
@@ -124,8 +134,8 @@ async function verifyTwitterCredentials() {
       if(userData.now.name && userData.now.country) {
         const whereAmI = `${userData.now.name}, ${userData.now.country}`;
 
+        console.log(`🗺️  Updating Twitter location to ${whereAmI}`);
         if(res.location !== whereAmI) {
-          console.log(`🗺️  Updating Twitter location to ${whereAmI}`);
           updateTwitterBioLocation(client, whereAmI);
         } else {
           console.log(`⏭️  Skipping location update! Twitter bio/location already ${res.location}.`);
