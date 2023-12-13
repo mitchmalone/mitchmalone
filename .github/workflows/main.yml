@@ -25,14 +25,14 @@ jobs:
           key: ${{ runner.os }}-js-${{ hashFiles('package-lock.json') }}
       - name: Install dependencies
         run: npm install
-      - name: Generate README file
+      - name: Fetch data, generate README and update Twitter
         run: node index.js
         env:
-          APP_API_KEY: Test
-          APP_API_KEY_SECRET: Test
-          USER_BEARER_TOKEN: Test
-          USER_ACCESS_TOKEN: Test
-          USER_ACCESS_TOKEN_SECRET: Test
+          APP_API_KEY: ${{ secrets.APP_API_KEY }}
+          APP_API_KEY_SECRET: ${{ secrets.APP_API_KEY_SECRET }}
+          USER_BEARER_TOKEN: ${{ secrets.USER_BEARER_TOKEN }}
+          USER_ACCESS_TOKEN: ${{ secrets.USER_ACCESS_TOKEN }}
+          USER_ACCESS_TOKEN_SECRET: ${{ secrets.USER_ACCESS_TOKEN_SECRET }}
       - name: Commit and Push new README.md to the repository
         uses: mikeal/publish-to-github-action@master
         env:
