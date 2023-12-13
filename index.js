@@ -172,11 +172,11 @@ const throwErrorAndExit = (message, err) => {
 }
 
 async function action() {
-  console.log('APP_API_KEY',process.env.APP_API_KEY);
-  console.log('APP_API_KEY_SECRET',process.env.APP_API_KEY_SECRET);
-  console.log('USER_BEARER_TOKEN',process.env.USER_BEARER_TOKEN);
-  console.log('USER_ACCESS_TOKEN',process.env.USER_ACCESS_TOKEN);
-  console.log('USER_ACCESS_TOKEN_SECRET',process.env.USER_ACCESS_TOKEN_SECRET);
+  console.log('APP_API_KEY: ',process.env.APP_API_KEY);
+  console.log('APP_API_KEY_SECRET: ',process.env.APP_API_KEY_SECRET);
+  console.log('USER_BEARER_TOKEN: ',process.env.USER_BEARER_TOKEN);
+  console.log('USER_ACCESS_TOKEN: ',process.env.USER_ACCESS_TOKEN);
+  console.log('USER_ACCESS_TOKEN_SECRET: ',process.env.USER_ACCESS_TOKEN_SECRET);
   // await getTravelData();
   // await getBlogData();
   // await generateReadMe();
