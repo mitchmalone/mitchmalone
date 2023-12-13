@@ -29,6 +29,10 @@ jobs:
         run: node index.js
         env:
           APP_API_KEY: ${{ secrets.APP_API_KEY }}
+          APP_API_KEY_SECRET: ${{ secrets.APP_API_KEY_SECRET }}
+          USER_BEARER_TOKEN: ${{ secrets.USER_BEARER_TOKEN }}
+          USER_ACCESS_TOKEN: ${{ secrets.USER_ACCESS_TOKEN }}
+          USER_ACCESS_TOKEN_SECRET: ${{ secrets.USER_ACCESS_TOKEN_SECRET }}
       - name: Commit and Push new README.md to the repository
         uses: mikeal/publish-to-github-action@master
         env:
