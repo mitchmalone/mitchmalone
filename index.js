@@ -58,7 +58,9 @@ async function getTravelData() {
   console.log(`🐶 Attempting to fetch travel data from ${travelData}`);
 
   await fetch(travelData).then(async (response) => {
-    const data = await response.json();
+    let data = await response.json();
+    data.now.city = data.now.address.split(',')[data.now.address.split(',').length-1];
+
     if (response.status === 200) {
       userData = {
         ...userData,
