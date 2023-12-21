@@ -59,7 +59,7 @@ async function getTravelData() {
 
   await fetch(travelData).then(async (response) => {
     let data = await response.json();
-    data.now.city = data.now.address.split(',')[data.now.address.split(',').length-1];
+    data.now.city = data.now.address.split(',')[data.now.address.split(',').length-1]; // get the last item in the address array
 
     if (response.status === 200) {
       userData = {
@@ -122,8 +122,8 @@ async function verifyTwitterCredentials() {
     if (res) {
       console.log(`✅ Success! Verified @${res.screen_name} Twitter credentials (${res.followers_count} followers).`);
 
-      if(userData.now.name && userData.now.country) {
-        const whereAmI = `${userData.now.name}, ${userData.now.country}`;
+      if(userData.now.city && userData.now.country) {
+        const whereAmI = `${userData.now.city}, ${userData.now.country}`;
 
         console.log(`🗺️  Updating Twitter location to ${whereAmI}`);
         if(res.location !== whereAmI) {
