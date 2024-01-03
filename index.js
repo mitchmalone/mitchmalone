@@ -11,7 +11,7 @@ import 'dotenv/config';
  * Sets up the URLs for data fetching
  */
 const blogFeed = 'https://medium.com/feed/@mitchmalone';
-const travelData = 'https://nomadmo.re/api/travel-data';
+const travelData = 'https://nomadmo.re/travel-data.json';
 
 /**
  * Sets up the user object with some defauls
