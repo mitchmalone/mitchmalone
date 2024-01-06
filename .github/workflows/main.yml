@@ -18,11 +18,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '19.x'
-      - name: Cache dependencies and build outputs to improve workflow execution time.
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-js-${{ hashFiles('package-lock.json') }}
+      # - name: Cache dependencies and build outputs to improve workflow execution time.
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: node_modules
+      #     key: ${{ runner.os }}-js-${{ hashFiles('package-lock.json') }}
       - name: Install dependencies
         run: npm install
       - name: Fetch data, generate README and update Twitter
