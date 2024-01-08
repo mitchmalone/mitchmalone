@@ -104,7 +104,7 @@ async function generateReadMe() {
 /*
  * Checks and validates Twitter credentials
  */
-async function verifyTwitterCredentials() {
+async function tweetStuff() {
   const client = new Twitter({
     consumer_key: process.env.APP_API_KEY,
     consumer_secret: process.env.APP_API_KEY_SECRET,
@@ -123,10 +123,11 @@ async function verifyTwitterCredentials() {
       console.log(`✅ Success! Verified @${res.screen_name} Twitter credentials (${res.followers_count} followers).`);
 
       if(userData.now.city && userData.now.country) {
+        const whereWasI = res.location;
         const whereAmI = `${userData.now.city}, ${userData.now.country}`;
 
         console.log(`🗺️  Updating Twitter location to ${whereAmI}`);
-        if(res.location !== whereAmI) {
+        if(whereWasI !== whereAmI) {
           updateTwitterBioLocation(client, whereAmI);
         } else {
           console.log(`⏭️  Skipping location update! Twitter bio/location already ${res.location}.`);
@@ -157,7 +158,7 @@ async function action() {
   await getTravelData();
   await getBlogData();
   await generateReadMe();
-  await verifyTwitterCredentials();
+  await tweetStuff();
 }
 
 action();
