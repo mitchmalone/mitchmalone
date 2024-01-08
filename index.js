@@ -151,8 +151,6 @@ async function updateTwitterBioLocation(client, location) {
   )
 }
 
-
-
 async function action() {
   await createUserProfile();
   await getTravelData();
