@@ -1,17 +1,17 @@
-import fs from 'fs/promises';
-import fetch from 'node-fetch';
-import Parser from 'rss-parser';
-import handlebars from 'handlebars';
-import Twitter from 'twitter';
-import { throwErrorAndExit } from './helpers/errorHelpers.js';
+import fs from "fs/promises";
+import fetch from "node-fetch";
+import Parser from "rss-parser";
+import handlebars from "handlebars";
+import Twitter from "twitter";
+import { throwErrorAndExit } from "./helpers/errorHelpers.js";
 
-import 'dotenv/config';
+import "dotenv/config";
 
 /**
  * Sets up the URLs for data fetching
  */
-const blogFeed = 'https://medium.com/feed/@mitchmalone';
-const travelData = 'https://nomadmo.re/travel-data.json';
+const blogFeed = "https://medium.com/feed/@mitchmalone";
+const travelData = "https://nomadmo.re/travel-data.json";
 
 /**
  * Sets up the user object with some defauls
@@ -21,14 +21,14 @@ let userData = {};
 /**
  * Helper for formatting the Handlebars template. Old school, right?
  */
-handlebars.registerHelper('lt', function( a, b ){
-	var next =  arguments[arguments.length-1];
-	return (a < b) ? next.fn(this) : next.inverse(this);
+handlebars.registerHelper("lt", function (a, b) {
+  var next = arguments[arguments.length - 1];
+  return a < b ? next.fn(this) : next.inverse(this);
 });
 
 async function createUserProfile() {
   // open user.json and store data in a variable
-  let user = await fs.readFile('./user.json', 'utf8')
+  let user = await fs.readFile("./user.json", "utf8");
   userData = JSON.parse(user);
 }
 
@@ -41,14 +41,16 @@ async function getBlogData() {
   console.log(`🐶 Attempting to fetch blog data from ${blogFeed}`);
   let feed = await parser.parseURL(blogFeed);
 
-  userData.articles = feed.items.map(article => {
+  userData.articles = feed.items.map((article) => {
     return {
       ...article,
-      title: article.title.replaceAll('*', '')
-    }
+      title: article.title.replaceAll("*", ""),
+    };
   });
 
-  console.log(`✅ Success! Blog data fetched ${userData.articles.length} articles.`);
+  console.log(
+    `✅ Success! Blog data fetched ${userData.articles.length} articles.`,
+  );
 }
 
 /**
@@ -57,21 +59,26 @@ async function getBlogData() {
 async function getTravelData() {
   console.log(`🐶 Attempting to fetch travel data from ${travelData}`);
 
-  await fetch(travelData).then(async (response) => {
-    let data = await response.json();
-    data.now.city = data.now.address.split(',')[data.now.address.split(',').length-1]; // get the last item in the address array
+  await fetch(travelData)
+    .then(async (response) => {
+      let data = await response.json();
+      data.now.city =
+        data.now.address.split(",")[data.now.address.split(",").length - 1]; // get the last item in the address array
 
-    if (response.status === 200) {
-      userData = {
-        ...userData,
-        ...data
+      if (response.status === 200) {
+        userData = {
+          ...userData,
+          ...data,
+        };
+
+        console.log(
+          `✅ Success! User data fetched and updated from ${travelData}.`,
+        );
       }
-      
-      console.log(`✅ Success! User data fetched and updated from ${travelData}.`);
-    }
-  }).catch(async (error) => {
-    throwErrorAndExit(`Failed to fetch ${travelData}`);
-  });
+    })
+    .catch(async (error) => {
+      throwErrorAndExit(`Failed to fetch ${travelData}`);
+    });
 }
 
 /**
@@ -80,24 +87,24 @@ async function getTravelData() {
 async function generateReadMe() {
   console.log(`⚙️ Generating README.md file.`);
 
-  const file = await fs.readFile('./template.hbs', 'utf8');
+  const file = await fs.readFile("./template.hbs", "utf8");
   var source = file.toString();
   var template = handlebars.compile(source);
 
   var outputString = template({
     ...userData,
-    refresh_date: new Date().toLocaleDateString('en-GB', {
-      weekday: 'long',
-      month: 'long',
-      day: 'numeric',
-      hour: 'numeric',
-      minute: 'numeric',
-      timeZoneName: 'short',
-      timeZone: 'Europe/Paris'
-    })
+    refresh_date: new Date().toLocaleDateString("en-GB", {
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      timeZoneName: "short",
+      timeZone: "Europe/Paris",
+    }),
   });
-  
-  await fs.writeFile('README.md', outputString);
+
+  await fs.writeFile("README.md", outputString);
   console.log(`✅ Success! README.md file generated.`);
 }
 
@@ -109,7 +116,7 @@ async function tweetStuff() {
     consumer_key: process.env.APP_API_KEY,
     consumer_secret: process.env.APP_API_KEY_SECRET,
     access_token_key: process.env.USER_ACCESS_TOKEN,
-    access_token_secret: process.env.USER_ACCESS_TOKEN_SECRET
+    access_token_secret: process.env.USER_ACCESS_TOKEN_SECRET,
   });
 
   console.log(`🛂 Verifying Twitter credentials.`);
@@ -120,35 +127,42 @@ async function tweetStuff() {
     }
 
     if (res) {
-      console.log(`✅ Success! Verified @${res.screen_name} Twitter credentials (${res.followers_count} followers).`);
+      console.log(
+        `✅ Success! Verified @${res.screen_name} Twitter credentials (${res.followers_count} followers).`,
+      );
 
-      if(userData.now.city && userData.now.country) {
+      if (userData.now.city && userData.now.country) {
         const whereWasI = res.location;
         const whereAmI = `${userData.now.city}, ${userData.now.country}`;
 
         console.log(`🗺️  Updating Twitter location to ${whereAmI}`);
-        if(whereWasI !== whereAmI) {
+        if (whereWasI !== whereAmI) {
           updateTwitterBioLocation(client, whereAmI);
         } else {
-          console.log(`⏭️  Skipping location update! Twitter bio/location already ${res.location}.`);
+          console.log(
+            `⏭️  Skipping location update! Twitter bio/location already ${res.location}.`,
+          );
         }
       } else {
         console.log(`⏭️  Skipping location update! No location set.`);
       }
     }
-  })
+  });
 }
 
 async function updateTwitterBioLocation(client, location) {
-  return await client.post( "account/update_profile", {location}, async (err) => {
+  return await client.post(
+    "account/update_profile",
+    { location },
+    async (err) => {
       if (err) {
         console.error(err);
         throwErrorAndExit(`Failed to update Twitter bio location.`);
       }
 
       console.log(`✅ Success! Updated Twitter bio/location to ${location}`);
-    }
-  )
+    },
+  );
 }
 
 async function action() {

@@ -8,6 +8,6 @@ const throwErrorAndExit = (message, err) => {
   }
 
   process.exit(1);
-}
+};
 
 export { throwErrorAndExit };
