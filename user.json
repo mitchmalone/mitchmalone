@@ -1,11 +1,15 @@
 {
   "name": "Mitch",
-  "description": "Hi, I'm Mitch! I am a post-technical product and engineering leader with 20+ years of experience in software engineering, product management, and engineering management. I have recently returned from a career break traveling in Europe with my wife and I am **available for work**.",
   "pronouns": "he/him/his.",
-  "work": "**Available for new remote opportnuities in Australia, US and Canada.**",
+  "work": "**Available for new remote opportunities.**",
   "learning": "Always learning with a huge reading list on product and design.",
   "askAbout": "Tech and product leadership, post-technical value for engineering managers, van life, travel, and digital nomadism.",
   "reachMe": "[My Linktree](https://linktr.ee/mitchmalone)",
+  "remoteStats": {
+    "remoteStart": "2011-09-01",
+    "nomadStart": "2019-02-15",
+    "nomadEnd": "2023-02-11"
+  },
   "from": "Australia",
   "now": null,
   "locationCount": null,

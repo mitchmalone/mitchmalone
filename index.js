@@ -26,6 +26,18 @@ handlebars.registerHelper("lt", function (a, b) {
   return a < b ? next.fn(this) : next.inverse(this);
 });
 
+handlebars.registerHelper("diff", function (dateFrom, dateTo) {
+  const then = new Date(dateFrom);
+  const now = dateTo != null ? new Date(dateTo) : new Date();
+
+  let years = now.getFullYear() - then.getFullYear();
+  if (now.getMonth() < then.getMonth() || (now.getMonth() == then.getMonth() && now.getDate() < then.getDate())) {
+    years--;
+  }
+
+  return years;
+});
+
 async function createUserProfile() {
   // open user.json and store data in a variable
   let user = await fs.readFile("./user.json", "utf8");

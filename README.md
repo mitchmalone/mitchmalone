@@ -7,15 +7,16 @@
 
 -------
 
-Hi, I&#x27;m Mitch! I am a post-technical product and engineering leader with 20+ years of experience in software engineering, product management, and engineering management. I have recently returned from a career break traveling in Europe with my wife and I am **available for work**.
+Hi, I'm Mitch! I am a post-technical product and engineering leader with 20+ years of experience in software engineering, product management, and engineering management. I have recently returned from a career break traveling in Europe with my wife and I am **available for work**.
 
-Since 2018 I have visited `32` countries and worked from `336` distinct locations. Check out
+I have been a remote worker for 12 years, and I've spent 7 years as a digital nomad.
+During that time I visited `32` countries and worked from `336` distinct locations. Check out
 my travel map of locations <a href="https://nomadmo.re/maps/the-full-travel-map/">here</a>.
 
 ### 👨‍🎤 About
 
 - **😄 Pronouns:** he/him/his.
-- **📍 Location:** Launceston, Tasmania.
+- **📍 Location:** Remote worker located in Launceston, Tasmania.
 - **👷‍♂️ Work:** ****Available for new remote opportnuities in Australia, US and Canada.****
 - **🌱 Currently learning:** Always learning with a huge reading list on product and design.
 - **💬 Ask me about:** Tech and product leadership, post-technical value for engineering managers, van life, travel, and digital nomadism.
