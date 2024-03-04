@@ -112,7 +112,7 @@ async function generateReadMe() {
       hour: "numeric",
       minute: "numeric",
       timeZoneName: "short",
-      timeZone: "Europe/Paris",
+      timeZone: "Australia/Hobart",
     }),
   });
 
