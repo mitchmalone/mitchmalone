@@ -1,6 +1,6 @@
 {
   "name": "mitchmalone",
-  "version": "2.2.3",
+  "version": "2.3.0",
   "description": "Mitch Malone GitHub Profile Generator",
   "main": "index.js",
   "scripts": {
