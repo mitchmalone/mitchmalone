@@ -1,10 +1,13 @@
 {
   "name": "Mitch",
   "pronouns": "he/him/his.",
-  "work": "**Available for new remote opportunities.**",
+  "work": "Available for remote opportunities.",
   "learning": "Always learning with a huge reading list on product and design.",
   "askAbout": "Tech and product leadership, post-technical value for engineering managers, van life, travel, and digital nomadism.",
   "reachMe": "[My Linktree](https://linktr.ee/mitchmalone)",
+  "careerStats": {
+    "careerStart": "2001-02-15"
+  },
   "remoteStats": {
     "remoteStart": "2011-09-01",
     "nomadStart": "2019-02-15",
