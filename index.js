@@ -120,6 +120,33 @@ async function generateReadMe() {
   console.log(`✅ Success! README.md file generated.`);
 }
 
+/**
+ * Generates the index.mdx file for the MMIO website
+ */
+async function generateReadMe() {
+  console.log(`⚙️ Generating mmio-index.mdx file.`);
+
+  const file = await fs.readFile("./mmio-index.hbs", "utf8");
+  var source = file.toString();
+  var template = handlebars.compile(source);
+
+  var outputString = template({
+    ...userData,
+    refresh_date: new Date().toLocaleDateString("en-GB", {
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      timeZoneName: "short",
+      timeZone: "Australia/Hobart",
+    }),
+  });
+
+  await fs.writeFile("mmio-index.mdx", outputString);
+  console.log(`✅ Success! mmio-index.mdx file generated.`);
+}
+
 /*
  * Checks and validates Twitter credentials
  */
@@ -182,6 +209,7 @@ async function action() {
   await getTravelData();
   await getBlogData();
   await generateReadMe();
+  await generateReadMmio();
   await tweetStuff();
 }
 
