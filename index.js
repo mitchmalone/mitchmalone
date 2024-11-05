@@ -123,7 +123,7 @@ async function generateReadMe() {
 /**
  * Generates the index.mdx file for the MMIO website
  */
-async function generateReadMe() {
+async function generateReadMmio() {
   console.log(`⚙️ Generating mmio-index.mdx file.`);
 
   const file = await fs.readFile("./mmio-index.hbs", "utf8");
