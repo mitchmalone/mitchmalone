@@ -26,7 +26,7 @@ handlebars.registerHelper("lt", function (a, b) {
   return a < b ? next.fn(this) : next.inverse(this);
 });
 
-Handlebars.registerHelper('toLowerCase', function(str) {
+handlebars.registerHelper('toLowerCase', function(str) {
   return str.toLowerCase();
 });
 
