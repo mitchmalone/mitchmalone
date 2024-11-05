@@ -26,6 +26,10 @@ handlebars.registerHelper("lt", function (a, b) {
   return a < b ? next.fn(this) : next.inverse(this);
 });
 
+Handlebars.registerHelper('toLowerCase', function(str) {
+  return str.toLowerCase();
+});
+
 handlebars.registerHelper("diff", function (dateFrom, dateTo) {
   const then = new Date(dateFrom);
   const now = dateTo != null ? new Date(dateTo) : new Date();
