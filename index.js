@@ -124,9 +124,9 @@ async function generateReadMe() {
  * Generates the index.mdx file for the MMIO website
  */
 async function generateReadMmio() {
-  console.log(`⚙️ Generating mmio-index.mdx file.`);
+  console.log(`⚙️ Generating mmio-index-md.mdx file.`);
 
-  const file = await fs.readFile("./mmio-index.hbs", "utf8");
+  const file = await fs.readFile("./mmio-index-md.hbs", "utf8");
   var source = file.toString();
   var template = handlebars.compile(source);
 
@@ -143,8 +143,8 @@ async function generateReadMmio() {
     }),
   });
 
-  await fs.writeFile("mmio-index.mdx", outputString);
-  console.log(`✅ Success! mmio-index.mdx file generated.`);
+  await fs.writeFile("mmio-index-md.mdx", outputString);
+  console.log(`✅ Success! mmio-index-md.mdx file generated.`);
 }
 
 /*
