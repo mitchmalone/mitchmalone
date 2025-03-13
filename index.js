@@ -44,7 +44,7 @@ handlebars.registerHelper("diff", function (dateFrom, dateTo) {
 
 async function createUserProfile() {
   // open user.json and store data in a variable
-  let user = await fs.readFile("./user.json", "utf8");
+  let user = await fs.readFile("./bio/user.json", "utf8");
   userData = JSON.parse(user);
 }
 
@@ -103,7 +103,7 @@ async function getTravelData() {
 async function generateReadMe() {
   console.log(`⚙️ Generating README.md file.`);
 
-  const file = await fs.readFile("./template.hbs", "utf8");
+  const file = await fs.readFile("./bio/template_readme.hbs", "utf8");
   var source = file.toString();
   var template = handlebars.compile(source);
 
@@ -130,7 +130,7 @@ async function generateReadMe() {
 async function generateReadMmio() {
   console.log(`⚙️ Generating mmio-index-md.mdx file.`);
 
-  const file = await fs.readFile("./mmio-index-md.hbs", "utf8");
+  const file = await fs.readFile("./bio/template_mmio.hbs", "utf8");
   var source = file.toString();
   var template = handlebars.compile(source);
 
@@ -147,8 +147,8 @@ async function generateReadMmio() {
     }),
   });
 
-  await fs.writeFile("mmio-index-md.mdx", outputString);
-  console.log(`✅ Success! mmio-index-md.mdx file generated.`);
+  await fs.writeFile("./bio/mm.mdx", outputString);
+  console.log(`✅ Success! mmio.mdx file generated.`);
 }
 
 /*
