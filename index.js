@@ -147,7 +147,7 @@ async function generateReadMmio() {
     }),
   });
 
-  await fs.writeFile("./bio/mm.mdx", outputString);
+  await fs.writeFile("./bio/mmio.mdx", outputString);
   console.log(`✅ Success! mmio.mdx file generated.`);
 }
 
