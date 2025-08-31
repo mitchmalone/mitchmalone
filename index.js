@@ -11,7 +11,7 @@ import "dotenv/config";
  * Sets up the URLs for data fetching
  */
 // const blogFeed = "https://medium.com/feed/@mitchmalone";
-const blogFeed = "https://probable-engine-pq9p6ppg4c6xrj.github.dev/";
+const blogFeed = "https://mitchmalone.io/feeds/rss.xml";
 const travelData = "https://nomadmo.re/travel-data.json";
 
 /**
