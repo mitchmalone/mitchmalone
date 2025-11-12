@@ -37,7 +37,7 @@ my travel map of locations <a href="https://nomadmo.re/maps/the-full-travel-map/
 - **🔗 [Linktree](https://linktr.ee/mitchmalone)**
 - **📸 [Instagram](https://www.instagram.com/mitchmalone)**
 - **👤 [Facebook](https://www.facebook.com/mitchmalone)**
-- **🐦 [Twitter](https://twitter.com/mitch__malone)**
+- **🐦 [Twitter](https://twitter.com/mitchmalone)**
 - **👔 [LinkedIn](https://www.linkedin.com/in/mitchmalone)**
 - **📍 [Nomad More](https://nomadmo.re)**
 - **📸 [Photography Portfolio](https://mitchmalone.photography)**
