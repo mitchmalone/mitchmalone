@@ -165,48 +165,60 @@ async function tweetStuff() {
 
   console.log(`🛂 Verifying Twitter credentials.`);
 
-  return await client.get("account/verify_credentials", (err, res) => {
-    if (err) {
-      throwErrorAndExit(`Could not verify your Twitter credentials`, err);
-    }
-
-    if (res) {
-      console.log(
-        `✅ Success! Verified @${res.screen_name} Twitter credentials (${res.followers_count} followers).`,
-      );
-
-      if (userData.now.city && userData.now.country) {
-        const whereWasI = res.location;
-        const whereAmI = `${userData.now.city}, ${userData.now.country}`;
-
-        console.log(`🗺️  Updating Twitter location to ${whereAmI}`);
-        if (whereWasI !== whereAmI) {
-          updateTwitterBioLocation(client, whereAmI);
-        } else {
-          console.log(
-            `⏭️  Skipping location update! Twitter bio/location already ${res.location}.`,
-          );
-        }
-      } else {
-        console.log(`⏭️  Skipping location update! No location set.`);
+  return new Promise((resolve, reject) => {
+    client.get("account/verify_credentials", async (err, res) => {
+      if (err) {
+        throwErrorAndExit(`Could not verify your Twitter credentials`, err);
+        reject(err);
+        return;
       }
-    }
+
+      if (res) {
+        console.log(
+          `✅ Success! Verified @${res.screen_name} Twitter credentials (${res.followers_count} followers).`,
+        );
+
+        if (userData.now.city && userData.now.country) {
+          const whereWasI = res.location;
+          const whereAmI = `${userData.now.city}, ${userData.now.country}`;
+
+          console.log(`🗺️  Updating Twitter location to ${whereAmI}`);
+          if (whereWasI !== whereAmI) {
+            await updateTwitterBioLocation(client, whereAmI);
+            resolve();
+          } else {
+            console.log(
+              `⏭️  Skipping location update! Twitter bio/location already ${res.location}.`,
+            );
+            resolve();
+          }
+        } else {
+          console.log(`⏭️  Skipping location update! No location set.`);
+          resolve();
+        }
+      }
+    });
   });
 }
 
 async function updateTwitterBioLocation(client, location) {
-  return await client.post(
-    "account/update_profile",
-    { location },
-    async (err) => {
-      if (err) {
-        console.error(err);
-        throwErrorAndExit(`Failed to update Twitter bio location.`);
-      }
+  return new Promise((resolve, reject) => {
+    client.post(
+      "account/update_profile",
+      { location },
+      (err) => {
+        if (err) {
+          console.error(err);
+          throwErrorAndExit(`Failed to update Twitter bio location.`);
+          reject(err);
+          return;
+        }
 
-      console.log(`✅ Success! Updated Twitter bio/location to ${location}`);
-    },
-  );
+        console.log(`✅ Success! Updated Twitter bio/location to ${location}`);
+        resolve();
+      },
+    );
+  });
 }
 
 async function action() {
