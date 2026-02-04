@@ -1,10 +1,10 @@
 {
   "name": "Mitch",
   "pronouns": "he/him/his.",
-  "available_for": "Consulting, advisory and board engagements",
+  "available_for": "fractional and full-time engagements, advisory board positions, consulting",
   "work": "Open for new opportunities (fractional and full time).",
-  "learning": "Always learning with a huge reading list on product and design.",
-  "askAbout": "Tech and product leadership, post-technical value for engineering managers, van life, travel, and digital nomadism.",
+  "learning": "AI everything. Openclaw, agents, async, afk.",
+  "askAbout": "Coding for senior leaders, tech and product leadership, van life, travel, and digital nomadism.",
   "reachMe": "[My Linktree](https://linktr.ee/mitchmalone)",
   "careerStats": {
     "careerStart": "2001-02-15"
@@ -14,7 +14,7 @@
     "nomadStart": "2019-02-15",
     "nomadEnd": "2023-02-11"
   },
-  "from": "Australia",
+  "from": "Tasmania, Australia",
   "now": null,
   "locationCount": null,
   "countryCount": null,
@@ -27,11 +27,11 @@
     },
     {
       "title": "Travel Blog",
-      "link": "https://nomadmo.re"
+      "link": "https://www.roamingamok.com/"
     },
     {
       "title": "Photography Portfolio",
-      "link": "https://mitchmalone.photography"
+      "link": "https://mitchmalone.photography/"
     }
   ],
   "otherLinks": [
@@ -61,13 +61,13 @@
       "emoji": "👔"
     },
     {
-      "title": "Nomad More",
-      "link": "https://nomadmo.re",
+      "title": "Roaming Amok",
+      "link": "https://www.roamingamok.com/",
       "emoji": "📍"
     },
     {
       "title": "Photography Portfolio",
-      "link": "https://mitchmalone.photography",
+      "link": "https://mitchmalone.photography/",
       "emoji": "📸"
     }
   ]
