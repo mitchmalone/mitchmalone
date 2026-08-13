@@ -1,6 +1,6 @@
 {
   "name": "mitchmalone",
-  "version": "2.3.1",
+  "version": "3.0.0",
   "description": "Mitch Malone GitHub Profile Generator",
   "main": "index.js",
   "scripts": {
@@ -18,11 +18,10 @@
   "homepage": "https://github.com/mitchmalone/mitchmalone#readme",
   "type": "module",
   "dependencies": {
+    "@notionhq/client": "^5.23.2",
     "dotenv": "^16.3.1",
-    "handlebars": "^4.7.7",
-    "node-fetch": "^2.7.0",
-    "rss-parser": "^3.13.0",
-    "twitter": "^1.1.0"
+    "notion-to-md": "^3.1.9",
+    "rss-parser": "^3.13.0"
   },
   "devDependencies": {
     "prettier": "3.1.1"

@@ -1,31 +1,38 @@
-<h1 align="center">Hi, I'm Mitch. 👋</h1>
-<p align="center">
-  <a href="https://mitchmalone.io">Professional Blog</a> •
-  <a href="https://www.roamingamok.com/">Travel Blog</a> •
-  <a href="https://mitchmalone.photography/">Photography Portfolio</a>
-</p>
+# Hi, I'm Mitch! 👋
 
--------
+Probably the most technical CPO you know.
 
-Hi, I'm Mitch! 👋 I am an *AI-first* and *Agent-native* product and engineering leader with `25+` ears of experience in software engineering, product management, and engineering management.
+AI-pilled and AI native CPO and Builder. Passionate about leading product and engineering teams, building strong and resilient cultures, and leading from the front by getting my hands dirty.
 
-I am a passionate product, engineering and UX generalist with a strong focus on building products that are user-centric and scalable. I am available for fractional and full-time engagements, advisory board positions, consulting.
+25+ years engineering experience, remote worker and leader for 14+ years. My engineering career has taken me to the CTO level, hyperscaling engineering teams from 8 to more than 70 people with [Linktree](https://linktr.ee/), before moving into hybrid product and engineering roles.
 
-I have been a remote worker for `14` years, and I've spent `7` years as a digital nomad.
-During that time I visited `33` countries and worked from `340` distinct locations. Check out
-my travel map of locations <a href="https://nomadmo.re/maps/the-full-travel-map/">here</a>.
+AI native, fully pilled from day 1, an AI an optimist with calluses of implementation and best practices. Along with a great culture, I believe AI is the biggest productivity unlock most companies have available, and I've advised companies on exactly how to capture it. But that optimism is grounded in the unglamorous part of the job: implementing AI properly, monitoring it closely, and keeping it honest in production.
 
 ### 👨‍🎤 About
 
 - **😄 Pronouns:** he/him/his.
 - **📍 Location:** Remote worker located in Launceston, Tasmania.
-- **👷‍♂️ Work:** Open for new opportunities (fractional and full time).
+- **👷‍♂️ Work:** Chief Product Officer at [Psyke](https://psyke.co/).
 - **👋 Available for:** fractional and full-time engagements, advisory board positions, consulting
 - **🌱 Currently learning:** AI everything. Openclaw, agents, async, afk.
 - **💬 Ask me about:** Coding for senior leaders, tech and product leadership, van life, travel, and digital nomadism.
 - **📫 How to reach me:** [My Linktree](https://linktr.ee/mitchmalone)
 
+### 🎒 Projects
+
+| Project | What it is | Status |
+|---|---|---|
+| [Emberstash](https://www.emberstash.com) | Stash documents, send them to your kindle. | `shipping` 0.2.0 |
+| [Launcharr](https://www.launcharr.com) | Low resource, minimal, hackable app launcher for macOS. | `shipping` 0.3.1 |
+| [Beeptui](https://www.beeptui.com) | Beeper in your tui. All your chats inside TUI and tmux. | `shipping` 0.4.1 |
+| [Backcountry Games](https://backcountrygames.com) | Offline games for real humans. Take them into the wild! | `coming soon` |
+| [Trivia Bard](https://www.triviabard.com) | Manage trivia nights with an all-in-one solution. | `coming soon` 0.1 |
+| [Roaming Amok](https://www.roamingamok.com) | Travel blog and insights from 7 years as a digital nomad. | `live` |
+| [Photography](https://mitchmalone.photography) | Collection of my favorite photos from throughout the years. | `live` |
+| [droiddroiddroid](https://www.droiddroiddroid.com) | Droids. Love ‘em. | `live` |
+
 ### ✍️ Latest Blog Posts
+
 - [What People Are Actually Building With Openclaw](https://mitchmalone.com/insights/what-people-are-actually-building-with-openclaw)
 - [First 24 Hours: What Happens When an AI Gets Real Work to Do](https://mitchmalone.com/insights/first-24-hours-what-happens-when-an-ai-gets-real-work-to-do)
 - [3 Practical Books Everyone Should Read for a Better Life](https://mitchmalone.com/insights/3-practical-books-everyone-should-read-for-a-better-life)
@@ -34,15 +41,18 @@ my travel map of locations <a href="https://nomadmo.re/maps/the-full-travel-map/
 - [The Best Approach to Deep Focus Work Sessions for Getting Sht Done](https://mitchmalone.com/insights/the-best-approach-to-deep-focus-work-sessions-for-getting-sht-done)
 
 ### 🔗 My links
+
+- **👨‍🎤 [Website](https://mitchmalone.io)**
 - **🔗 [Linktree](https://linktr.ee/mitchmalone)**
 - **📸 [Instagram](https://www.instagram.com/mitchmalone)**
 - **👤 [Facebook](https://www.facebook.com/mitchmalone)**
-- **🐦 [Twitter](https://twitter.com/mitchmalone)**
+- **🐙 [Github](https://github.com/mitchmalone)**
+- **🐦 [Twitter](https://x.com/mitchmalone)**
 - **👔 [LinkedIn](https://www.linkedin.com/in/mitchmalone)**
-- **📍 [Roaming Amok](https://www.roamingamok.com/)**
+- **📍 [Roaming Amok Travel Blog](https://www.roamingamok.com/)**
 - **📸 [Photography Portfolio](https://mitchmalone.photography/)**
 
 Github profile automatically generates every 3 hours. Articles, and data marked in `code` is generated by the Github
 Action. Make your own by inspecting this repository.
 
-Last generation: `Thursday 13 August at 10:34 GMT+10`.
+Last generation: `Thursday 13 August at 11:33 GMT+10`.
