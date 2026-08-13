@@ -10,6 +10,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Without this a stalled request would hold a runner for six hours.
+    timeout-minutes: 10
 
     steps:
       - name: Checkout current repository to Main branch

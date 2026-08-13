@@ -26,9 +26,16 @@ const LINKS_DATA_SOURCE = "3bb3d7d1-79ad-809f-97a2-000bb6fa08ec";
 /** Blog posts shown in the README. */
 const MAX_ARTICLES = 6;
 
+/**
+ * Per-request ceiling. The build runs unattended, so a stalled connection
+ * would otherwise hang the job until the runner's own timeout hours later.
+ */
+const REQUEST_TIMEOUT_MS = 15000;
+
 const notion = new Client({
   auth: process.env.NOTION_TOKEN,
   notionVersion: "2025-09-03",
+  timeoutMs: REQUEST_TIMEOUT_MS,
   // The SDK logs every failed request at warn level, so a single outage
   // prints once per query on top of the error we raise ourselves.
   logLevel: LogLevel.ERROR,
@@ -204,7 +211,9 @@ async function getLinks() {
 async function getArticles() {
   console.log(`🐶 Attempting to fetch blog data from ${BLOG_FEED}`);
 
-  const feed = await new Parser().parseURL(BLOG_FEED);
+  const feed = await new Parser({ timeout: REQUEST_TIMEOUT_MS }).parseURL(
+    BLOG_FEED,
+  );
   const articles = feed.items.slice(0, MAX_ARTICLES).map((article) => ({
     title: article.title.replaceAll("*", ""),
     link: article.link,
