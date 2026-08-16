@@ -139,3 +139,6 @@ package-lock.json
 
 # Local Netlify folder
 .netlify
+
+# per-machine direnv glue (Infisical injects env)
+.envrc
