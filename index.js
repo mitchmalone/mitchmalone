@@ -211,9 +211,24 @@ async function getLinks() {
 async function getArticles() {
   console.log(`🐶 Attempting to fetch blog data from ${BLOG_FEED}`);
 
-  const feed = await new Parser({ timeout: REQUEST_TIMEOUT_MS }).parseURL(
-    BLOG_FEED,
-  );
+  // parseURL() follows the feed's redirect without reading that response, so
+  // the first TLS socket never joins Node's free pool. The agent only unrefs
+  // and idle-closes sockets in that pool, and the process waits until the
+  // peer drops the connection — several minutes, sometimes past the job
+  // timeout. fetch consumes redirects and does not hold the event loop open.
+  const response = await fetch(BLOG_FEED, {
+    headers: {
+      "User-Agent": "rss-parser",
+      Accept: "application/rss+xml",
+    },
+    signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Blog feed request failed with status ${response.status}`);
+  }
+
+  const feed = await new Parser().parseString(await response.text());
   const articles = feed.items.slice(0, MAX_ARTICLES).map((article) => ({
     title: article.title.replaceAll("*", ""),
     link: article.link,
