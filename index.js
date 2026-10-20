@@ -12,7 +12,7 @@ import "dotenv/config";
  * Sources. The bio prose lives on a Notion page; projects and links live in
  * Notion databases. Blog posts still come from the site's own RSS feed.
  */
-const BLOG_FEED = "https://mitchmalone.io/feeds/rss.xml";
+const BLOG_FEED = "https://www.mitchmalone.com/feeds/rss.xml";
 const BIO_PAGE_ID = "3bb3d7d179ad80a7af81d864b5cca6e8";
 
 /**
